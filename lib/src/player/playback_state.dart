@@ -1,5 +1,4 @@
 import 'package:music_player/music_player.dart';
-import 'package:system_clock/system_clock.dart';
 
 class PlaybackState {
   final PlayerState state;
@@ -20,11 +19,12 @@ class PlaybackState {
   /// discuss: https://github.com/boyan01/flutter-music-player/issues/1
   ///
   int get computedPosition {
-    var append = state == PlayerState.Playing
-        ? (SystemClock.uptime().inMilliseconds - updateTime)
-        : 0;
-    append = (append * speed).toInt();
-    return position + append;
+    // var append = state == PlayerState.Playing
+    //     ? (SystemClock.uptime().inMilliseconds - updateTime)
+    //     : 0;
+    // append = (append * speed).toInt();
+    // return position + append;
+    return position;
   }
 
   const PlaybackState({
